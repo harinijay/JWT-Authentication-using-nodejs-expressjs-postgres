@@ -15,14 +15,17 @@ router.post('/login', async(req,res)=>{
         //PASSWORD CHECK
         const validPassword = await bcrypt.compare(password,users.rows[0].user_password);
         if(!validPassword) return res.status(401).json({error:"Incorrect password"});
-        return res.status(200).json("Success");
+    
 
         //JWT
+        let tokens = jwtTokens(users.rows[0]);
+        res.cookie('refresh_token', tokens.refreshToken, {httpOnly: true});
+        res.json(tokens);
 
     } catch (error) {
-        
+        res.status(401).json({error: error.message});
     }
-})
+});
 
 
 export default router;

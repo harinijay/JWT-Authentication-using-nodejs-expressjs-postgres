@@ -2,9 +2,9 @@ POST http://localhost:5000/api/users
 Content-Type: application/json
 
 {
-    "name":"Bob",
-    "email":"bob@email.com",
-    "password":"bob"
+    "name":"Fred",
+    "email":"fred@email.com",
+    "password":"fred"
 }
 
 ###
@@ -14,5 +14,11 @@ Content-Type: application/json
 
 {
     "email":"bob@email.com",
-    "password":"bob1"
+    "password":"bob"
 }
+
+
+###
+
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmRkYjNlZTAtNWJmZS00MTBlLWIzMTAtNzQ5NTZlOGI1ZDAwIiwidXNlcl9uYW1lIjoiQm9iIiwidXNlcl9lbWFpbCI6ImJvYkBlbWFpbC5jb20iLCJpYXQiOjE2OTE1MTQ3MDYsImV4cCI6MTY5MTUxNDc2Nn0.144D8ImLbLTsBN3lRqXyOhCJHKALt82UuHiZeA4W628
